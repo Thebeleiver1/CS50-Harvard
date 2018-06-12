@@ -1,0 +1,52 @@
+0.  It is an artificial long word said to mean a lung disease caused by inhaling very fine ash and sand dust.
+
+1.  getrusage() returns resource usage measures for the calling process itself, the children of the calling process, or the calling thread.
+
+2.  16 - 2 structs and 16 long types.
+
+3.  Passing in values involves copying the two 16 member struts which would take some time and memory. Since the purpose of getrusage() is to 
+    track the resources required (including time and RAM) this would lead to inaccuracies.Additionally, if a rusage struct has an undefined 
+    value it is autonatically set to zero. This negates any dereferencing crashes or extra checks.
+
+
+4.  The text file is specified in the command line as the 2nd or 3rd argument. A file pointer is set to a file that is opened in "readmode".
+    If the pointer is pointed at a null character then an error is thrown. Then variables are set up before the loop. "index" tracks the 
+    position in the word, "misspellings" tracks the amount of words misspelt, "words" tracks the amount of words scanned for misspellings,
+    "word" is the character set that is hopefully building a word that is set to the maximum size of a word plus the end of string character. 
+    
+5.  fgetc reads the file character by character, discriminating vs anything that isn't alphabetical or an apostrophe proceeded by a character.
+fscanf reads until white space and stores the array in a buffer, the array may contain commas etc which would cause problems for the 
+misspelling function.
+
+6.  The const type ensures that the initial value of the parameter cannot be modified. This means that each word we are checking along with 
+the dictionary cannot be changed. This safety measure is useful as these values should be consistent. Students are required to write these 
+functions and it is possible that they might accidently alter something they shouldn't.
+
+7.  I used a custom struct called "node" to store individual words from the dictionary. It contains a string and a pointer to another node.
+In order to load my dictionary, I used a a hashtable where each entry is a header node pointing to the next node of a linked list.
+I decided to have a large hash table rather than long linked lists, therefore I felt that sorting the linked list would not improve searches enough when considering the extra load time.
+
+
+8.  WORDS MISSPELLED: 644
+WORDS IN DICTIONARY: 143091
+WORDS IN TEXT: 19190
+TIME IN load: 5.65
+TIME IN check: 1.15
+TIME IN size: 0.00
+TIME IN unload: 0.06 
+TIME IN TOTAL: 6.86
+
+9.  WORDS MISSPELLED:     644
+WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        19190
+TIME IN load:         0.37
+TIME IN check:        0.03
+TIME IN size:         0.00
+TIME IN unload:       0.02
+TIME IN TOTAL:        0.42
+I used a different hashfunction. At first I only hashed by the first character of a word, then I moved onto the first 2, then 3. I searched online and found a hash function that operated by shifting bits and this created a much more evenly spread hashtable. Credit to delipity at reddit who also recommended a hashtable size which gave consistently low results on multiple runs.
+For the size function, I tracked the words loaded by using a global variable and updating it in load everytime a new word was loaded.
+
+10. I made a large hashtable with a good hash function to distribute values as evenly as possibly. This was hopeful 
+ly enough to justify not sorting the linked lists alphabetically but perhaps it wasn't. With more time it would've been interesting to look 
+into the possible speed increase and also the downsides (if any) of using a large hashtable.

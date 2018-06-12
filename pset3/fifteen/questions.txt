@@ -1,0 +1,9 @@
+questions.txt
+
+Computer Science 50
+Problem Set 3
+
+0. The dimension are defined by minimum 3 to maximum 9 so dimension can be from 3 x 3 to 9 x 9 respectively.
+1. Game Board is represented with 2 dimensional array.
+2. Greet() function is called to greet player ate the start of game.
+3. init, draw, move, won function need to be implemented.

@@ -1,0 +1,42 @@
+0. GIF support 256 colors. JPEG, PNG and BMP 24bit support over 16 million which is 16,777,216 colors. 
+
+1. GIF
+
+2.  Lossless means that every single bits is recovered after uncompression and lossy means that the format compress itself by eliminating certain bits.
+
+3.  JPEG
+
+4.  When a file is deleted from a file system, most operating systems do not overwrite the blocks on
+    the hard disk that the file is written on. Instead, they simply remove the file’s reference from the
+    containing directory. The file’s blocks are then placed on the free list. Which can be easily retrieved using undelete tools and utilities.
+
+5.  I will use a third party disk erasing tools tools or sanitization tools which claims to erase all the data which cannot be recoverd.
+
+6.  stdint.h is a standard c library which have different support types as int8_t, int16_t which have additional properties, such as providing storage with and exact size. Which let us to play with image.
+
+7.  uint means unsigned integer so uint8_t, uint16_t, uint32_t doesn't hold any value so we have to define it in other hand int32_t hold a specific size.
+
+8.  BYTE is 8 bits so 1 byte.
+    DWORD is 32 bits 4 byte.
+    LONG is 32 bits 4 byte.
+    WORD is 16 bits 2 byte.
+    
+9.  The first tow decimal value of BMP file are magic number 66 and 67 "BM".
+
+10. bfsize is the filesize where bisize is the size of overall headersize.
+
+11. If biheight is negative BMP is top - down with the origin at left corner.
+
+12. biBitCount .
+
+13. If it cannot find the given file it can't open it so in that case it will return NULL.
+
+14. Because this is the number of elements, each one with a size of size bytes.
+
+15. The padding would be 3 if bi.width is 3 .
+
+16. It moves to a specific location in file.
+
+17. It moves to the current position of file pointer.
+
+18. Professor David J Malan
